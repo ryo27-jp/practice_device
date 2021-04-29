@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-md-6.col-12.offset-md-3
+      - @games.each do |game|
+        .card.mt-3
+          .card-header
+            a.text-dark [href="#{game_path(game)}"]
+              = game.title
+          .card-body.p-5
+            blockquote.blockquote.mb-0
+              = game.text
+              footer.blockquote-footer
+                | 制作会社
+                = link_to '編集', edit_game_path(game), class: 'btn btn-primary'        
+                = link_to '削除', game_path(game), class: 'btn btn-danger', method: :delete, data: { confirm: '本当に削除しますか？' }         
