@@ -12,4 +12,6 @@
               footer.blockquote-footer
                 | 制作会社
                 = link_to '編集', edit_game_path(game), class: 'btn btn-primary'        
-                = link_to '削除', game_path(game), class: 'btn btn-danger', method: :delete, data: { confirm: '本当に削除しますか？' }         
+                = link_to '削除', game_path(game), class: 'btn btn-danger', method: :delete, data: { confirm: '本当に削除しますか？' }    
+
+  = paginate @games
