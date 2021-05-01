@@ -1,2 +1,20 @@
 h1 Rankings#index
-p Find me in app/views/rankings/index.html.slim
+
+.container
+  .row
+    .col-md-6.col-12.offset-md-3
+      - @rankings.each do |ranking|
+        .card.mt-3
+          .card-header
+            a.text-dark [href="#{ranking_path(ranking)}"]
+              = ranking.title
+          .card-body.p-5
+            blockquote.blockquote.mb-0
+              = ranking.first_place.title
+              = ranking.second_place.title
+              footer.blockquote-footer
+                | 制作会社
+                = link_to '編集', edit_ranking_path(ranking), class: 'btn btn-primary'        
+                = link_to '削除', ranking_path(ranking), class: 'btn btn-danger', method: :delete, data: { confirm: '本当に削除しますか？' }    
+
+  / = paginate @rankings
