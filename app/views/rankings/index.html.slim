@@ -9,8 +9,9 @@ h1 Rankings#index
             a.text-dark [href="#{ranking_path(ranking)}"]
               = ranking.title
           .card-body.p-5
-            blockquote.blockquote.mb-0
+            p.card-text
               = ranking.first_place.title
+            p.card-text
               = ranking.second_place.title
               footer.blockquote-footer
                 | 制作会社
