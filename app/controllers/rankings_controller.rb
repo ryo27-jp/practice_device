@@ -1,4 +1,5 @@
 class RankingsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
   def index
     @rankings = Ranking.all
   end
@@ -43,7 +44,7 @@ class RankingsController < ApplicationController
     @ranking.destroy!
     redirect_to rankings_path, notice:"削除しました"
   end
-  
+
   private
 
   def ranking_params
