@@ -10,13 +10,13 @@
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
             li.nav-item
               .nav-link
-                = link_to "new", new_game_path
+                = link_to "new", games_path
             li.nav-item
               .nav-link
-                = link_to "ランキング", new_ranking_path
+                = link_to "ランキング", rankings_path
             li.nav-item
               .nav-link
-                = link_to "ログアウト", destroy_user_session_path, method: :delete
+                = link_to "ログイン", new_user_session_path
             li.nav-item
               a.nav-link.disabled[href="#" tabindex="-1" aria-disabled="true"]
                 | Disabled

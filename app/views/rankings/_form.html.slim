@@ -1,0 +1,11 @@
+= form_with model: ranking, local: true do |f|
+  .form-group 
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label "ランキング"
+    = f.collection_select :first_place_id, Game.all, :id, :title,{prompt: "選択してください"}, {class: "form-select"}
+  .form-group
+    = f.label "ランキング"
+    = f.collection_select :second_place_id, Game.all, :id, :title,{prompt: "選択してください"}, {class: "form-select"}
+  = f.submit class: 'btn btn-primary' 

@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_012416) do
+ActiveRecord::Schema.define(version: 2021_05_01_065630) do
 
   create_table "games", force: :cascade do |t|
     t.string "title", null: false
     t.string "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rankings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.integer "first_place_id"
+    t.integer "second_place_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["first_place_id"], name: "index_rankings_on_first_place_id"
+    t.index ["second_place_id"], name: "index_rankings_on_second_place_id"
+    t.index ["user_id"], name: "index_rankings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,4 +44,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_012416) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "rankings", "games", column: "first_place_id"
+  add_foreign_key "rankings", "games", column: "second_place_id"
+  add_foreign_key "rankings", "users"
 end

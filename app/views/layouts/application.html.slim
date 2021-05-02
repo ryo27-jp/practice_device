@@ -10,7 +10,10 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
   .conteiner
-    = render 'shared/header'
+    - if user_signed_in?
+      = render 'shared/header'
+    - else
+      = render 'shared/before_login_header'
   .conteiner.pb-5
     p.notice = notice 
     a.alert = alert
