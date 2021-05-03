@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_065630) do
+ActiveRecord::Schema.define(version: 2021_05_03_122631) do
 
   create_table "games", force: :cascade do |t|
     t.string "title", null: false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2021_05_01_065630) do
     t.index ["user_id"], name: "index_rankings_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "game_id", null: false
+    t.string "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_reviews_on_game_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -47,4 +57,6 @@ ActiveRecord::Schema.define(version: 2021_05_01_065630) do
   add_foreign_key "rankings", "games", column: "first_place_id"
   add_foreign_key "rankings", "games", column: "second_place_id"
   add_foreign_key "rankings", "users"
+  add_foreign_key "reviews", "games"
+  add_foreign_key "reviews", "users"
 end
