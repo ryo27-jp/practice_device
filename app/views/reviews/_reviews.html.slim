@@ -1,2 +1,6 @@
 - reviews.each do |x|
-  = x.body
+  .list-group
+    .list-item
+      = x.body
+    
+      = link_to "削除", game_review_path(x.game_id, x), method: :delete, class:"btn btn-danger",method: :delete, data: { confirm: '本当に削除しますか？' }  
