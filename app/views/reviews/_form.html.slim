@@ -1,0 +1,5 @@
+= form_with model: [game, review] do |f|
+  .form-group 
+    = f.label :body
+    = f.text_area :body, class:'form-controll'
+  = f.submit class: 'btn btn-primary'

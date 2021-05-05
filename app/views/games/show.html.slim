@@ -1,2 +1,16 @@
-h1 Games#show
-p Find me in app/views/games/show.html.slim
+.container
+  table.table.table-hover
+    tbody
+      tr 
+        th= Game.human_attribute_name(:title)
+        td= @game.title
+      tr 
+        th= Game.human_attribute_name(:description)
+        td= @game.text
+
+  = render 'reviews/reviews', reviews: @reviews
+
+  = render 'reviews/form', review: @review, game: @game
+
+
+
