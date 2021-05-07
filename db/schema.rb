@@ -10,53 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_03_122631) do
-
-  create_table "games", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+ActiveRecord::Schema.define(version: 20_210_503_122_631) do
+  create_table 'games', force: :cascade do |t|
+    t.string 'title', null: false
+    t.string 'text'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "rankings", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "title", null: false
-    t.integer "first_place_id"
-    t.integer "second_place_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["first_place_id"], name: "index_rankings_on_first_place_id"
-    t.index ["second_place_id"], name: "index_rankings_on_second_place_id"
-    t.index ["user_id"], name: "index_rankings_on_user_id"
+  create_table 'rankings', force: :cascade do |t|
+    t.integer 'user_id', null: false
+    t.string 'title', null: false
+    t.integer 'first_place_id'
+    t.integer 'second_place_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['first_place_id'], name: 'index_rankings_on_first_place_id'
+    t.index ['second_place_id'], name: 'index_rankings_on_second_place_id'
+    t.index ['user_id'], name: 'index_rankings_on_user_id'
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "game_id", null: false
-    t.string "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_reviews_on_game_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+  create_table 'reviews', force: :cascade do |t|
+    t.integer 'user_id', null: false
+    t.integer 'game_id', null: false
+    t.string 'body'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['game_id'], name: 'index_reviews_on_game_id'
+    t.index ['user_id'], name: 'index_reviews_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'name'
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key "rankings", "games", column: "first_place_id"
-  add_foreign_key "rankings", "games", column: "second_place_id"
-  add_foreign_key "rankings", "users"
-  add_foreign_key "reviews", "games"
-  add_foreign_key "reviews", "users"
+  add_foreign_key 'rankings', 'games', column: 'first_place_id'
+  add_foreign_key 'rankings', 'games', column: 'second_place_id'
+  add_foreign_key 'rankings', 'users'
+  add_foreign_key 'reviews', 'games'
+  add_foreign_key 'reviews', 'users'
 end

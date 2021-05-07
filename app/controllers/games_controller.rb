@@ -7,7 +7,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
 
     @reviews = @game.reviews
-    @review = Review.new 
+    @review = Review.new
   end
 
   def new

@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to game_path(params[:game_id])
     else
-      render template: "games/show", game: @game, reviews: @reviews
+      render template: 'games/show', game: @game, reviews: @reviews
     end
   end
 
@@ -21,8 +21,8 @@ class ReviewsController < ApplicationController
   end
 
   private
-  
+
   def review_params
-    params.require(:review).permit(:body).merge( game_id: params[:game_id], user_id: current_user.id)
+    params.require(:review).permit(:body).merge(game_id: params[:game_id], user_id: current_user.id)
   end
 end
