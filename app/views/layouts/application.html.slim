@@ -17,6 +17,7 @@ html
   .conteiner.pb-5
     p.notice = notice 
     a.alert = alert
+    = breadcrumbs separator: " &rsaquo; "
     = yield
   .fixed-bottom.bg-dark
     = render 'shared/footer'
