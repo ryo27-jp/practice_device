@@ -7,6 +7,10 @@ crumb :user_new do
   parent :root
 end
 
+crumb :game_new do
+  link "NewGame", new_game_path
+  parent :root
+end
 # crumb :project do |project|
 #   link project.name, project_path(project)
 #   parent :projects
