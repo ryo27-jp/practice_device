@@ -18,6 +18,9 @@
               .nav-link
                 = link_to "ログイン", new_user_session_path
             li.nav-item
+              .nav-link
+                = link_to "twitter", user_twitter_omniauth_authorize_path, method: :post
+            li.nav-item
               a.nav-link.disabled[href="#" tabindex="-1" aria-disabled="true"]
                 | Disabled
           form.d-flex
