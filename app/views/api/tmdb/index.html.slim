@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-md-6.col-12.offset-md-3
+      - @movie["results"].each do |movie|
+        .card.mt-3
+          .card-header
+            = movie["title"]
+          .card-body.p-5
+            blockquote.blockquote.mb-0
+              = image_tag  "https://image.tmdb.org/t/p/w300_and_h450_bestv2/#{movie["poster_path"]}" 
+              = movie["overview"]
