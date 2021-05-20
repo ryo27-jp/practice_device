@@ -9,3 +9,5 @@
             blockquote.blockquote.mb-0
               = image_tag  "https://image.tmdb.org/t/p/w300_and_h450_bestv2/#{movie["poster_path"]}" 
               = movie["overview"]
+              = link_to "https://twitter.com/share?url=#{ request.url }&text=#{ movie["title"] }を観てみたい！", class: 'btn btn-primary', target: '_blank' do
+                  |  Twitterでシェア
