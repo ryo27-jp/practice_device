@@ -126,6 +126,7 @@ GEM
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
+    httpclient (2.8.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -302,6 +303,7 @@ DEPENDENCIES
   faker
   gretel
   html2slim
+  httpclient
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)

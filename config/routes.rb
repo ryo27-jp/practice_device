@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   resources :games do
     resources :reviews, only: %i[create destroy]
   end
+
+  namespace :api do 
+    get '/tmdb', to: 'tmdb#index'
+  end
+
 end
