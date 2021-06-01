@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.order(:title).page(params[:page]).per(5)
+    @q = Game.ransack(params[:q])
+    @games = @q.result.page(params[:page]).per(5)
   end
 
   def show
