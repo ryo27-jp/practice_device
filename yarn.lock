@@ -1532,7 +1532,7 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap@^4.6.0:
+bootstrap@4.6.0, bootstrap@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.0.tgz#97b9f29ac98f98dfa43bf7468262d84392552fd7"
   integrity sha512-Io55IuQY3kydzHtbGvQya3H+KorS/M9rSNyfCGCg9WZ4pyT/lCxIlpJgG1GXW/PswzC84Tr2fBYi+7+jFVQQBw==
@@ -6758,6 +6758,13 @@ stable@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
+
+startbootstrap-simple-sidebar@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/startbootstrap-simple-sidebar/-/startbootstrap-simple-sidebar-5.2.0.tgz#6ca6deb5dd844bdddbdcf8127bde8991357b093e"
+  integrity sha512-pb10gWGp93CZVa6VbuwvCPESbfkw/sERXINvqiNTzW5mvC8JoJZNjXLh+bI1er63Emvx2wlOdB6g5THhpr4sNQ==
+  dependencies:
+    bootstrap "4.6.0"
 
 static-extend@^0.1.1:
   version "0.1.2"

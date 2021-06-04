@@ -1,29 +1,42 @@
-.d-flex.flex-column.flex-shrink-0.p-3.bg-light style=("width: 280px;") 
-  a.d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.link-dark.text-decoration-none href="/" 
-    svg.bi.me-2 height="32" width="40" 
-      use xlink:href="#bootstrap" /
-    span.fs-4 サイドバー
-  hr/
-  ul.nav.nav-pills.flex-column.mb-auto
-    li.nav-item
-      a.nav-link.active 
-        svg.bi.me-2 height="16" width="16" 
-          use xlink:href="#home" /
-        | ホーム
-    li
-      a.nav-link.link-dark href="#" 
-        svg.bi.me-2 height="16" width="16" 
-          use xlink:href="#speedometer2" /
-        | ダッシュボード
-    li
-      a.nav-link.link-dark href="#" 
-        svg.bi.me-2 height="16" width="16" 
-          use xlink:href="#table" /
-        | 注文
-    li
-      a.nav-link.link-dark href="#" 
-        svg.bi.me-2 height="16" width="16" 
-        | 製品
-    li
-      a.nav-link.link-dark href="#" 
-        | 顧客
+#wrapper.d-flex
+  /! Sidebar
+  #sidebar-wrapper.border-end.bg-white
+    .sidebar-heading.border-bottom.bg-light Start Bootstrap
+    .list-group.list-group-flush
+      a.list-group-item.list-group-item-action.list-group-item-light.p-3 href="#!"  Dashboard
+      a.list-group-item.list-group-item-action.list-group-item-light.p-3 href="#!"  Shortcuts
+      a.list-group-item.list-group-item-action.list-group-item-light.p-3 href="#!"  Overview
+      a.list-group-item.list-group-item-action.list-group-item-light.p-3 href="#!"  Events
+      a.list-group-item.list-group-item-action.list-group-item-light.p-3 href="#!"  Profile
+      a.list-group-item.list-group-item-action.list-group-item-light.p-3 href="#!"  Status
+  /! Page content wrapper
+  #page-content-wrapper
+    /! Top navigation
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.border-bottom
+      .container-fluid
+        button#sidebarToggle.btn.btn-primary Toggle Menu
+        button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" 
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ms-auto.mt-2.mt-lg-0
+            li.nav-item.active
+              a.nav-link href="#!"  Home
+            li.nav-item
+              a.nav-link href="#!"  Link
+            li.nav-item.dropdown
+              a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-bs-toggle="dropdown" href="#" role="button"  Dropdown
+              .dropdown-menu.dropdown-menu-end aria-labelledby="navbarDropdown" 
+                a.dropdown-item href="#!"  Action
+                a.dropdown-item href="#!"  Another action
+                .dropdown-divider
+                a.dropdown-item href="#!"  Something else here
+    /! Page content
+    .container-fluid
+      h1.mt-4 Simple Sidebar
+      p The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.
+      p
+        | Make sure to keep all page content within the
+        code #page-content-wrapper
+        | \. The top navbar is optional, and just for demonstration. Just create an element with the
+        code #sidebarToggle
+        | ID which will toggle the menu when clicked.
