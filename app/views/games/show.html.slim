@@ -7,6 +7,10 @@
       tr 
         th= Game.human_attribute_name(:description)
         td= @game.text
+    - if @game.image_url?
+      tr
+        th
+        td  = image_tag @game.image_url.url, size: 300
 
   = render 'reviews/reviews', reviews: @reviews
 
