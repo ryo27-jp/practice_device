@@ -58,6 +58,7 @@ group :development do
   gem 'rubocop'
   gem 'slim-rails'
   gem 'spring'
+  gem 'rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
